@@ -1,22 +1,27 @@
 <template>
-  <v-container>
-    <Article v-for="article in articles" v-bind:article="article"/>
+  <v-container fluid>
+    <v-row dense>
+      <v-col v-for="article in articles" :key="article.id" cols="12">
+        <Article :article="article"></Article>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import Article from './Article.vue';
+import Article from '../components/Article.vue';
 import axios from 'axios'
+import ArticleForm from '@/pages/ArticleFormPage.vue';
 
 export default {
   components: {
-    Article
+    Article, ArticleForm
   },
-  
+
   data: () => ({
-    articles: []
+    articles: [],
   }),
-  
+
   mounted() {
     this.fetchAllArticles()
   },

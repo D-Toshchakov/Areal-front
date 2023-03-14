@@ -1,16 +1,22 @@
 <template>
-  <v-app>
-        <ArticlesPage/>
-  </v-app>
+    <v-app>
+        <v-card color="grey-lighten-3">
+            <Navbar/>
+            <v-main>
+                <RouterView></RouterView>
+            </v-main>
+        </v-card>
+    </v-app>
 </template>
 
 <script>
-import ArticlesPage from './components/ArticlesPage.vue';
+import ArticlesPage from './pages/ArticlesPage.vue';
+import Navbar from './components/Navbar.vue';
 
 
 export default {
-  name: 'App',
+    name: 'App',
 
-  components: { ArticlesPage }
+    components: { ArticlesPage, Navbar }
 }
 </script>
