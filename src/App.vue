@@ -13,7 +13,6 @@
 import ArticlesPage from './pages/ArticlesPage.vue';
 import Navbar from './components/Navbar.vue';
 
-
 export default {
     name: 'App',
 

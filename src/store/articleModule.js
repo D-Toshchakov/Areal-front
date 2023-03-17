@@ -23,11 +23,6 @@ export default {
 
         getCurrentArticle(state) {
             return state.currentArticle
-            // for (let article in state.articles) {
-            //     if (article.id === id) {
-            //         return article
-            //     }
-            // }
         }
     },
 
