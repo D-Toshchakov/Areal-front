@@ -8,14 +8,12 @@
         :text="article.articleText"
     >
         <template v-slot:actions>
-            <v-btn color="indigo">
-                <RouterLink 
-                    style="text-decoration: none; color: inherit;" 
-                    :to="{ name: 'article', params: { id: article.id }}"
-                >
-                    View More
-                </RouterLink>
-            </v-btn>
+            <RouterLink 
+                style="text-decoration: none; padding-left: 8px;" 
+                :to="{ name: 'article', params: { id: article.id }}"
+            >
+                View More
+            </RouterLink>
         </template>
     </v-card>
 </template>
@@ -30,6 +28,6 @@ export default {
             required: true,
         }
     },
-    components: { RouterLink }
+    // components: { RouterLink }
 }
 </script>

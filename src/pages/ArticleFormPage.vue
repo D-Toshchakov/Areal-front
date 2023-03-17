@@ -3,7 +3,6 @@
         <v-text-field placeholder="Title" v-model="title" />
         <v-textarea placeholder="Text" v-model="text" />
         <v-btn class="mr-2" @click="addArticle">Create</v-btn>
-        <v-btn class="mr-2" @click="addArticle">Close</v-btn>
     </v-container>
 </template>
 
@@ -11,10 +10,12 @@
 import axios from 'axios';
 
 export default {
-    data: () => ({
-        title: '',
-        text: '',
-    }),
+    data() {
+        return {
+            title: '',
+            text: '',
+        }
+    },
     methods: {
         addArticle() {
             let article = {

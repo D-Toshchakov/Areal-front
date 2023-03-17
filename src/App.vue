@@ -1,7 +1,7 @@
 <template>
     <v-app>
-        <v-card color="grey-lighten-3">
-            <Navbar/>
+        <v-card color="grey-lighten-3" height="100%">
+            <Navbar />
             <v-main>
                 <RouterView></RouterView>
             </v-main>
