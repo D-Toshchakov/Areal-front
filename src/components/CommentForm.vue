@@ -5,7 +5,13 @@
         placeholder="Comment" 
         v-model="text"
     />
-    <v-btn class="mb-8" @click="addComment">Post Comment</v-btn>
+    <v-btn 
+        class="mb-8" 
+        color="indigo" 
+        @click="addComment"
+    >
+        Post Comment
+    </v-btn>
 </template>
 
 <script>
@@ -19,10 +25,12 @@ export default {
     },
     methods: {
         addComment() {
+            if (this.text === '') {
+                return
+            }
             let comment = {
                 commentText: this.text,
             }
-            console.log('TEXT', this.text);
             axios.post(`http://localhost:3000${this.$route.fullPath}/comment`, comment)
         }
     }

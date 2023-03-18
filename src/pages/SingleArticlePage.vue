@@ -7,11 +7,8 @@
             {{ $store.getters.getCurrentArticle.articleText }}
         </div>
        
-        <EditArticleModal :article="$store.getters.getCurrentArticle"></EditArticleModal>
-  
-        <v-btn>
-            Delete
-        </v-btn>
+        <EditArticleModal></EditArticleModal>
+        <DeleteArticleModal></DeleteArticleModal>
 
         <div class="mb-4 mt-4">
             <h3>
@@ -22,13 +19,13 @@
         <v-row dense v-if="$store.getters.getAllComments.length > 0">
             <v-col
                 v-for="comment in $store.getters.getAllComments" 
-                :key="comment.id" 
+                :key="comment.id"
                 cols="12"
                 >
                 <Commentary :comment="comment"></Commentary>
             </v-col>
         </v-row>
-        <div v-else>There is no comments yet</div>
+        <div v-else>There are no comments yet</div>
     </v-container>
 </template>
 
@@ -37,6 +34,7 @@
 import Commentary from '../components/Commentary.vue';
 import CommentForm from '../components/CommentForm.vue';
 import EditArticleModal from '@/components/EditArticleModal.vue';
+import DeleteArticleModal from '@/components/DeleteArticleModal.vue';
 
 export default {
     beforeMount() {
@@ -44,6 +42,6 @@ export default {
         this.$store.dispatch('fetchCommentsByArticleId', this.$route.params['id'])
     },
     
-    components: { Commentary, CommentForm, EditArticleModal }
+    components: { Commentary, CommentForm, EditArticleModal, DeleteArticleModal }
 }
 </script>

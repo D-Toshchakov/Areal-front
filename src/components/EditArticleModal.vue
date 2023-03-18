@@ -1,10 +1,14 @@
 <template>
-    <v-dialog v-model="dialog" persistent width="1024">
-        <template v-slot:activator="{ props }">
-            <v-btn color="indigo" v-bind="props">
-                Edit
-            </v-btn>
-        </template>
+    <v-dialog 
+        v-model="dialog" 
+        persistent 
+        width="1024"
+    >
+    <template v-slot:activator="{ props }">
+        <v-btn color="indigo" v-bind="props">
+            Edit
+        </v-btn>
+    </template>
         <v-card>
             <v-card-title>
                 <span class="text-h5">Edit Article</span>
