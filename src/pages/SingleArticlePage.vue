@@ -3,10 +3,17 @@
         <div class="mb-8">
             <h1>{{ $store.getters.getCurrentArticle.articleName }}</h1>
         </div>
-        <div class="mb-8">
+        <div class="mb-4">
             {{ $store.getters.getCurrentArticle.articleText }}
         </div>
-        <div class="mb-4">
+       
+        <EditArticleModal :article="$store.getters.getCurrentArticle"></EditArticleModal>
+  
+        <v-btn>
+            Delete
+        </v-btn>
+
+        <div class="mb-4 mt-4">
             <h3>
                 Comments
             </h3>
@@ -28,7 +35,8 @@
 
 <script>
 import Commentary from '../components/Commentary.vue';
-import CommentForm from '../components/CommentForm.vue'
+import CommentForm from '../components/CommentForm.vue';
+import EditArticleModal from '@/components/EditArticleModal.vue';
 
 export default {
     beforeMount() {
@@ -36,6 +44,6 @@ export default {
         this.$store.dispatch('fetchCommentsByArticleId', this.$route.params['id'])
     },
     
-    components: { Commentary, CommentForm }
+    components: { Commentary, CommentForm, EditArticleModal }
 }
 </script>
