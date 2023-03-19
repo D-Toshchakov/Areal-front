@@ -17,6 +17,13 @@
             >
                 Create Article
             </RouterLink>
+            <RouterLink 
+                to="/analytic"
+                class="mr-5"
+                style="text-decoration: none; color: inherit;"
+            >
+                Analytics
+            </RouterLink>
         </v-app-bar>
     </v-container>
 </template>
